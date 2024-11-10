@@ -28,6 +28,6 @@ Run:
  You can access Prometheus at http://localhost:9090 and Graphana at http://localhost:3000
 
 1. Login into Graphana. Default user/password for Graphana is admin/admin
-1. Add a datasource for type Prometheus at address http://prometheus-sample-app-prometheus-1:9090 
+1. Add a datasource for type Prometheus at address http://go-monitoring-prometheus-graphana-prometheus-1:9090 
 1. Import [graphana/graphana-dashboard.json](graphana/graphana-dashboard.json) as a premade dashboard
 
