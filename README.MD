@@ -47,7 +47,7 @@ docker build -t davarski/go-mon:latest .
 docker login 
 docker push davarski/go-mon:latest
 cd k8s-manigest
-kubectl apply -f deployment.yaml -f servcie.yaml 
+kubectl apply -f deployment.yaml -f service.yaml 
 kubectl apply -f -f servicemonitor.yaml -n monitoring
 kubectl port-forward svc/go-mon 8080:8080
 curl http://localhost:8080/metrics
