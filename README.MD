@@ -54,3 +54,5 @@ curl http://localhost:8080/metrics
 kubectl get servicemonitors -n monitoring
 ```
 Ref: https://www.civo.com/learn/application-performance-monitoring-with-prometheus-and-grafana-on-kubernetes?fbclid=IwY2xjawGeiSBleHRuA2FlbQIxMAABHWpgpnaguwi66YpmUDBRJRSusoNAlVoNWq3cCJpEBPfNlgRAl411kwsK3A_aem_ez7N74fJ3mDIaxhoBOSumw
+
+https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md?fbclid=IwY2xjawGe9_5leHRuA2FlbQIxMAABHa94m8jKfLopNT3umVI4nHYsgMJq1CbTYJypn8lXLcOw1mnmxhu7BBWBGQ_aem_rfyObXDU2R3575NJyFcVcA
