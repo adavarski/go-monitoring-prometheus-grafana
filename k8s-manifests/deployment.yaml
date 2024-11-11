@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-mon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-mon
+  template:
+    metadata:
+      labels:
+        app: go-mon
+    spec:
+      containers:
+      - name: go-mon
+        image: davarski/go-mon:latest
+        imagePullPolicy: Always
+        ports:
+        - name: web
+          containerPort: 8080
