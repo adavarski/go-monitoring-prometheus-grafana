@@ -53,3 +53,4 @@ kubectl port-forward svc/go-mon 8080:8080
 curl http://localhost:8080/metrics
 kubectl get servicemonitors -n monitoring
 ```
+Ref: https://www.civo.com/learn/application-performance-monitoring-with-prometheus-and-grafana-on-kubernetes?fbclid=IwY2xjawGeiSBleHRuA2FlbQIxMAABHWpgpnaguwi66YpmUDBRJRSusoNAlVoNWq3cCJpEBPfNlgRAl411kwsK3A_aem_ez7N74fJ3mDIaxhoBOSumw
