@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: go-app
+  labels:
+    team: frontend
+    release: prometheus
+    app: go-mon
+spec:
+  selector:
+    matchLabels:
+      app: go-mon
+  namespaceSelector:
+    any: true
+  endpoints:
+    - port: web
+
