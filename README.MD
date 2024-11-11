@@ -31,7 +31,7 @@ Run:
 1. Add a datasource for type Prometheus at address http://go-monitoring-prometheus-graphana-prometheus-1:9090 
 1. Import [graphana/graphana-dashboard.json](graphana/graphana-dashboard.json) as a premade dashboard
 
-## Run on k8s (kind)
+## Run on k8s (k3d)
 
 ```
 k3d cluster create sre
