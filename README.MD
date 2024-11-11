@@ -31,3 +31,25 @@ Run:
 1. Add a datasource for type Prometheus at address http://go-monitoring-prometheus-graphana-prometheus-1:9090 
 1. Import [graphana/graphana-dashboard.json](graphana/graphana-dashboard.json) as a premade dashboard
 
+## Run on k8s (kind)
+
+```
+k3d cluster create sre
+kubectl create namespace monitoring
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install prometheus-operator prometheus-community/kube-prometheus-stack -n monitoring
+kubectl --namespace monitoring get pods
+kubectl port-forward svc/prometheus-operator-kube-p-prometheus -n monitoring 9090:9090
+kubectl port-forward svc/prometheus-operator-grafana -n monitoring 3000:80
+kubectl get secret -n monitoring  prometheus-operator-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+prom-operator
+docker build -t davarski/go-mon:latest .
+docker login 
+docker push davarski/go-mon:latest
+cd k8s-manigest
+kubectl apply -f deployment.yaml -f servcie.yaml 
+kubectl apply -f -f servicemonitor.yaml -n monitoring
+kubectl port-forward svc/go-mon 8080:8080
+curl http://localhost:8080/metrics
+kubectl get servicemonitors -n monitoring
+```
