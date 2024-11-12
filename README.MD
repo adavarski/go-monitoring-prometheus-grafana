@@ -81,7 +81,7 @@ kubectl get servicemonitors -n monitoring
 
 ![Prometheus app monitoring graph](./pictures/prometheus-go-mon-graph.png)
 
-Import grafana dashboard and 
+Import grafana dashboard: 
 
 ![Graphana Dashboard](./pictures/graphana-dashboard-go-mon.png)
 
