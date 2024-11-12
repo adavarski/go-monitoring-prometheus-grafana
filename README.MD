@@ -32,7 +32,7 @@ Run:
 1. Add a datasource for type Prometheus at address http://go-monitoring-prometheus-graphana-prometheus-1:9090 
 1. Import [graphana/graphana-dashboard.json](graphana/graphana-dashboard.json) as a premade dashboard
 
-# Run on k8s (k3d)
+# k8s (k3d)
 
 ## Create k8s cluster (k3d)
 ```
@@ -45,7 +45,7 @@ kubectl create namespace monitoring
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm install prometheus-operator prometheus-community/kube-prometheus-stack --values prometheus.yaml -n monitoring
 
-Note: I changed serviceMonitorSelectorNilUsesHelmValues to false. So prometheus resource got updated and picked up serviceMonitors from other namespaces.
+Note: serviceMonitorSelectorNilUsesHelmValues to false. So prometheus resource got updated and picked up serviceMonitors from other namespaces.
 
 prometheus.yaml
 ===============
@@ -67,7 +67,7 @@ docker build -t davarski/go-mon:latest .
 docker login 
 docker push davarski/go-mon:latest
 ```
-### Deploy app and Prom Service Monitor
+### Deploy app and apply Prometheus Service Monitor
 ```
 cd k8s-manigest
 kubectl apply -f deployment.yaml -f service.yaml 
@@ -77,9 +77,9 @@ curl http://localhost:8080/metrics
 
 kubectl get servicemonitors -n monitoring
 ```
-![Prometheus app monitoring target](./pictures/prometheus-go-mon-tearget.png)
+![Prometheus monitoring target](./pictures/prometheus-go-mon-tearget.png)
 
-![Prometheus app monitoring graph](./pictures/prometheus-go-mon-graph.png)
+![Prometheus monitoring graph](./pictures/prometheus-go-mon-graph.png)
 
 Import grafana dashboard (graphana-dashboard.json): 
 
