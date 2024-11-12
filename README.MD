@@ -76,7 +76,9 @@ kubectl port-forward svc/go-mon 8080:8080
 curl http://localhost:8080/metrics
 
 kubectl get servicemonitors -n monitoring
-
+NAME                                                 AGE
+go-app                                               10h
+...
 
 ```
 ![Prometheus monitoring target](./pictures/prometheus-go-mon-tearget.png)
