@@ -69,7 +69,7 @@ docker push davarski/go-mon:latest
 ```
 ### Deploy app and apply Prometheus Service Monitor
 ```
-cd k8s-manigest
+cd k8s-manigests
 kubectl apply -f deployment.yaml -f service.yaml 
 kubectl apply -f -f servicemonitor.yaml -n monitoring
 kubectl port-forward svc/go-mon 8080:8080
