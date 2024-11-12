@@ -36,7 +36,7 @@ Run:
 ## Create k8s cluster (k3d)
 ```
 k3d cluster create sre
----
+```
 ## Install Prometheus Operator
 ```
 cd k8s-manigest
