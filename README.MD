@@ -1,5 +1,6 @@
 # Example Go app that exposes Prometheus metrics
 
+# Docker 
 [![Go Report Card](https://goreportcard.com/badge/github.com/kostis-codefresh/prometheus-sample-app)](https://goreportcard.com/report/github.com/kostis-codefresh/prometheus-sample-app)
 
 ![Graphana Dashboard](graphana-dashboard.png)
@@ -31,7 +32,7 @@ Run:
 1. Add a datasource for type Prometheus at address http://go-monitoring-prometheus-graphana-prometheus-1:9090 
 1. Import [graphana/graphana-dashboard.json](graphana/graphana-dashboard.json) as a premade dashboard
 
-## TODO: WIP -> Run on k8s (k3d)
+# Run on k8s (k3d)
 
 ## Create k8s cluster (k3d)
 ```
