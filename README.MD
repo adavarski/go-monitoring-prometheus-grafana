@@ -24,7 +24,7 @@ Run:
 
  ## How to run with Prometheus and Graphana
 
- Run `docker compose up`
+ Run `docker compose up -d`
 
  You can access Prometheus at http://localhost:9090 and Graphana at http://localhost:3000
 
