@@ -63,9 +63,16 @@ prom-operator
 ````
 ## Build & Push docker image
 ```
-docker build -t davarski/go-mon:latest .
-docker login 
-docker push davarski/go-mon:latest
+in services apps directories
+
+docker build -t davarski/go-fiber:latest .
+docker push davarski/go-fiber:latest
+docker build -t davarski/node-express:latest .
+docker push davarski/node-express:latest
+docker build -t davarski/python-flask:latest .
+docker push davarski/python-flask:latest
+docker build -t davarski/traffic-generator:latest .
+docker push davarski/traffic-generator:latest
 ```
 ### Deploy app and apply Prometheus Service Monitor
 ```
@@ -76,6 +83,18 @@ kubectl port-forward svc/go-mon 8080:8080
 curl http://localhost:8080/metrics
 
 kubectl get servicemonitors -n monitoring
+
+kubectl logs traffic-generator-88f974f48-lfjgw
+Traffic generator started for services: ['http://node-express:3000', 'http://python-flask:8000', 'http://go-fiber:9000']
+Request to http://python-flask:8000: Status 200
+Request to http://node-express:3000: Status 200
+Request to http://node-express:3000: Status 200
+Request to http://node-express:3000: Status 200
+Request to http://python-flask:8000: Status 200
+Request to http://go-fiber:9000: Status 200
+Request to http://go-fiber:9000: Status 200
+
+
 ```
 ![Prometheus monitoring target](./pictures/prometheus-go-mon-tearget.png)
 
