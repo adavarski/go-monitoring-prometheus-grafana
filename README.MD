@@ -1,7 +1,6 @@
 # Example Go app that exposes Prometheus metrics
 
 # Docker 
-[![Go Report Card](https://goreportcard.com/badge/github.com/kostis-codefresh/prometheus-sample-app)](https://goreportcard.com/report/github.com/kostis-codefresh/prometheus-sample-app)
 
 ![Graphana Dashboard](graphana-dashboard.png)
 
